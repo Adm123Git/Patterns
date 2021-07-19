@@ -1,8 +1,6 @@
-package ru.adm123.pattern.chain;
+package ru.adm123.pattern.chainResponsibility;
 
-import ru.adm123.pattern.chain.model.*;
-
-import javax.xml.validation.Validator;
+import ru.adm123.pattern.chainResponsibility.model.*;
 
 /**
  * @author Dmitry Ushakov 17.07.2021
@@ -13,11 +11,8 @@ public class Demo {
         User user = new User(1, 16, "Mike", "TheirCompany");
         System.out.println("----- without chain ----------");
         checkWithoutChain(user);
-        System.out.println(user.getValidationResult());
         System.out.println("------- with chain -----------");
-        user.getValidationResult().clear();
         checkWithChain(user);
-        System.out.println(user.getValidationResult());
     }
 
     private static void checkWithoutChain(User user) {
@@ -26,19 +21,19 @@ public class Demo {
             return;
         }
         if (user.getId() < 1) {
-            user.getValidationResult().add("user not registered");
+            System.out.println("user not registered");
             return;
         }
         if (!"OurSuperCompany".equals(user.getCompany())) {
-            user.getValidationResult().add("user not \"OurSuperCompany\" employee");
+            System.out.println("user not \"OurSuperCompany\" employee");
             return;
         }
         if (user.getAge() < 18) {
-            user.getValidationResult().add("user too young");
+            System.out.println("user too young");
             return;
         }
         if (user.getName() == null || user.getName().trim().length() < 3) {
-            user.getValidationResult().add("name too short");
+            System.out.println("name too short");
             return;
         }
     }

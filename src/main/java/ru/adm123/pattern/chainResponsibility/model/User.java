@@ -1,4 +1,4 @@
-package ru.adm123.pattern.chain.model;
+package ru.adm123.pattern.chainResponsibility.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,9 +20,5 @@ public class User {
     private int age;
     private String name;
     private String company;
-    /**
-     * Просто для наглядности. Здесь будем хранить результат валидации цепочкой вызовов.
-     */
-    private final List<String> validationResult = new ArrayList<>();
 
 }
