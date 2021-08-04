@@ -11,10 +11,12 @@ import ru.adm123.pattern.decorator.model.User;
 public class Demo {
 
     public static void main(String[] args) {
-        Admin admin = new Admin(new Guest(1, "Mike"));
-        admin.administrateData();
         Moderator moderator = new Moderator(new User(new Guest(2, "John")));
         moderator.moderateData();
+        moderator.useData();
+        Admin admin = new Admin(new Moderator(new User(new Guest(3, "Mike"))));
+        admin.administrateData();
+        admin.useData();
     }
 
 }

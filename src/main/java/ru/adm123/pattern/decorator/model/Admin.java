@@ -5,10 +5,10 @@ import lombok.NonNull;
 /**
  * @author Dmitry Ushakov at 19.07.2021
  */
-public class Admin extends BasePerson {
+public class Admin extends Moderator {
 
-    public Admin(@NonNull BasePerson basePerson) {
-        super(basePerson.getId(), basePerson.getName());
+    public Admin(@NonNull Moderator moderator) {
+        super(moderator);
     }
 
     public void administrateData() {

@@ -5,10 +5,10 @@ import lombok.NonNull;
 /**
  * @author Dmitry Ushakov at 19.07.2021
  */
-public class User extends BasePerson {
+public class User extends Guest {
 
-    public User(@NonNull BasePerson basePerson) {
-        super(basePerson.getId(), basePerson.getName());
+    public User(@NonNull Guest guest) {
+        super(guest.getId(), guest.getName());
     }
 
     public void useData() {
